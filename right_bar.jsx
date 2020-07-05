@@ -1,15 +1,15 @@
 import get from 'lodash/fp/get';
-import Memory from './components/memory.jsx';
 import Wifi from './components/wifi.jsx';
 import Battery from './components/battery.jsx';
 import { parse } from './helpers.jsx';
 
 export const command = 'sh yabai-status-bar/scripts/right_bar.sh';
 
-export const refreshFrequency = 5000; // ms
+export const refreshFrequency = 5000;
 
 export const className = `
   right: 0;
+  bottom: 0;
 
   .right-bar {
     align-items: center;
@@ -32,10 +32,8 @@ export const render = ({ output }) => {
 
   return (
     <div className="right-bar">
-      <Memory data={get('memory')(data)} />
       <Wifi data={get('wifi')(data)} />
       <Battery data={get('battery')(data)} />
-      <div>{get('date_time')(data)}</div>
     </div>
   );
 };

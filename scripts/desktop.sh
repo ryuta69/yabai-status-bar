@@ -1,15 +1,10 @@
 #!/usr/bin/env bash
 
-yabai=/usr/local/bin/yabai
-jq=/usr/local/bin/jq
-
-CURRENT_WORKSPACE=$($yabai -m query --spaces --space)
-WORKSPACES=$($yabai -m query --spaces --display)
+DATE_TIME=$(date +"%Y-%m-%d %H:%M")
 
 echo $(cat <<EOF
 {
-  "workspaces": $WORKSPACES,
-  "active": $CURRENT_WORKSPACE
+  "date_time": "$DATE_TIME"
 }
 EOF
 )
