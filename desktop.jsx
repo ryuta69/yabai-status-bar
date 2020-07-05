@@ -25,19 +25,12 @@ export const className = `
     margin-left: 20px;
   }
 
-  .right-bar {
-    align-items: center;
-    color: #a8a8a8;
-    display: flex;
-    font-family: Helvetica Neue;
-    font-size: 14px;
-    height: 23px;
-    position: relative;
-    right: 0;
+  .desktop > div {
+    margin-right: 20px;
   }
 
-  .right-bar > div {
-    margin-right: 20px;
+  .desktop > div:nth-child(2) {
+    margin-left: auto;
   }
 `;
 
@@ -47,8 +40,8 @@ export const render = ({ output }) => {
   return (
     <div className="desktop">
       <div>{get('date_time')(data)}</div>
-      <Battery data={get('battery')(data)} />
       <Wifi data={get('wifi')(data)} />
+      <Battery data={get('battery')(data)} />
     </div>
   );
 };

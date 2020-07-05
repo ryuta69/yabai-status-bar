@@ -35,7 +35,7 @@ const Battery = ({ data }) => (
       }}
     />
     &nbsp;
-    {get('level')(data)}
+    {get('level')(data)}%
   </div>
 );
 
